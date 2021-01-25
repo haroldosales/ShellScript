@@ -36,4 +36,4 @@ echo "Saida do último Comando $?"
 
 echo "PID: $$"
 
-echo $0
+ echo $0
