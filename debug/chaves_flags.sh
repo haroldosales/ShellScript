@@ -2,9 +2,9 @@
 #
 # listadeusuraio.sh - extrair usuario do /etc/passwd
 #
-# Site:       https://4fasters.com.br
-# Autor:      Mateus Müller
-# Manutenção: Mateus Müller
+# Site:       https://haroldosales.com
+# Autor:      Haroldo Sales
+# Manutenção: Haroldo Sales
 #
 # ------------------------------------------------------------------------ #
 #  Este programa irá extrair usuario do /etc/passwd, havendo posibilidade de # #  Colocar em minusculo e ordem alfabetica
