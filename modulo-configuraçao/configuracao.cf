@@ -1,6 +1,5 @@
-# 0 desaivado, 1 ativado
+#0 desativado, 1 ativado
 USAR_MAISCULAS=1
 
-# 0 desativado, 1 ativado
+#0 desativado, 1 ativado
 USAR_CORES=1
-
