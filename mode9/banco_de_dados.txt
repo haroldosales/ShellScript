@@ -4,4 +4,5 @@
 2:Joao:joa@gmail.com
 3:haroldo:haroldognu@gmail.com5:Carlinhos:carlinhos@gmail.com
 6:carlos:carlos@gmail.com
+7:genial:genial@genial.com
 # Banco de dados Usuario

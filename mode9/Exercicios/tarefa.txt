@@ -1,0 +1,6 @@
+1:Acordar:Estudar6Horas
+2:Acordar:Estudar6Horas
+3:Acordar:Estudar6Horas
+4:Acordar:Estudar6Horas
+6:AcordaCedo:EstudarHoras
+7:Acorda:Teste

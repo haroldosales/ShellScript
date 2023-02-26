@@ -19,7 +19,7 @@
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- VARIÁVEIS --------------------------------#
-ARQUIVO_BANCO_DE_DADOS="banco_de.txt"
+ARQUIVO_BANCO_DE_DADOS="tarefa.txt"
 SEP=:
 TEMP=temp.$$
 
@@ -34,24 +34,21 @@ VERMELHO="\033[31;1m"
 [ ! -r "$ARQUIVO_BANCO_DE_DADOS" ] && echo "ERRO. Arquivo sem permissao de leitura."  && exit 1
 [ ! -w "$ARQUIVO_BANCO_DE_DADOS" ] && echo "ERRO. Arquivo sem permissao de escrita."  && exit 1
 [ ! -x "$(which dialog)"  ] && sudo pacman -S dialog 1> /dev/null 
-
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- FUNÇÕES ----------------------------------------- #
-
-
 ListaUsuarios () {
    egrep -v "^#|^$" "$ARQUIVO_BANCO_DE_DADOS" | tr : ' ' > "$TEMP"
    dialog --title "Lista de Usuarios" --textbox "$TEMP" 20 40
    rm -f $TEMP
-}
 
-ValidaExistenciaUsuario () {
+}
+ValidaExistenciaTarefa () {
   grep -i -q "$1$SEP" "$ARQUIVO_BANCO_DE_DADOS"
 }
 
-InserUsuario () {
-  local ultimo_id="$(egrep -v "^#|^$" $ARQUIVO_BANCO_DE_DADOS | sort | tail -n 1 | cut -d $SEP -f 1)"
+InserTarefa () {
+ local ultimo_id="$(egrep -v "^#|^$" $ARQUIVO_BANCO_DE_DADOS | sort | tail -n 1 | cut -d $SEP -f 1)"
   local proximo_id=$(($ultimo_id+1))
 
   local nome=$(dialog --title "Cadastro de usuario" --stdout --inputbox "Digite seu nome" 0 0)
@@ -65,11 +62,10 @@ InserUsuario () {
 
   dialog --title "Sucesso" --msgbox "Usuario Cadastro com sucsso!" 6 40
   
-
 }
 
-ApagarUsuario () {
-  ValidaExistenciaUsuario "$1" || return
+ApagarTarefa () {
+  ValidaExistenciaTarefa "$1" || return
 
   grep -i -v "$1$SEP" "$ARQUIVO_BANCO_DE_DADOS" > "$TEMP"
   mv "$TEMP" "$ARQUIVO_BANCO_DADOS"
